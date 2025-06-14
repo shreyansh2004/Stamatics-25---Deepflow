@@ -1,267 +1,86 @@
-Execution Plan for ConnectHire Platform
-1. Objective Understanding
-Build a full-stack platform connecting developers with companies for hiring in full-time, freelance, and internship capacities.
 
+Project Instructions
 
-Ensure seamless workflows for both user types, real-time updates, and scalable architecture.
+● Objective
+The objective of this project is to develop a model that can accurately predict the sale price of bulldozers and other heavy equipment at auction.
+This model will help Fast Iron create a reliable “Blue Book” pricing guide for customers based on:
+Usage
 
 
+Equipment type
 
-2. User Roles and Core Flows
-Developer:
-Sign up, create a profile, upload resume
 
+Configuration
 
-Showcase skills, certifications, and projects
 
+● What You Need to Do
+→ Phase 1: Understand the Data
+Read and explore the training dataset.
 
-Search and apply for jobs
 
+Use the Data Dictionary.xlsx to understand each feature.
 
-Track application status, receive real-time updates
 
+Identify:
 
-Chat with recruiters, attend scheduled interviews
 
+Missing values
 
-Company:
-Register, create a company profile
 
+Incorrect or unusual data types
 
-Post job listings with filters
 
+Outliers
 
-Search for candidates using advanced filters
 
+    → Phase 2: Data Cleaning & Preparation
+Handle missing values appropriately.
 
-View developer profiles, initiate contact or schedule interviews
 
+Correct data types and drop irrelevant columns.
 
-Manage applicants and hiring status
 
+Convert categorical variables using encoding techniques (e.g., one-hot, label encoding).
 
 
-3. Project Phases
-Phase 1 – Core Platform (MVP):
-User Authentication (JWT + bcrypt)
+Extract useful features (e.g., from the sale date).
+→ Phase 3: Model Building
+Train a regression model using the cleaned training data.
 
 
-Developer and Company Dashboards
+Try different algorithms and compare their performance.
 
 
-Profile Management and Resume Upload (via AWS S3)
+Use validation data to evaluate model performance.
 
 
-Job Posting and Filtering System
+→ Phase 4: Make Predictions
+Apply your final model to the test data (Test data file).
 
 
-Application Tracking
+Generate a prediction file named test_predictions in this format:
 
+ SalesID, SalePrice  
+1222837, 36205  
+3044012, 74570  
+1222841, 31910.50  
 
-Real-Time Notifications (Socket.IO or Redis Pub/Sub)
+Deliverable: Submit a correctly formatted prediction file.
+● Evaluation Metric
+Your predictions will be evaluated using RMSLE (Root Mean Squared Logarithmic Error).
 
 
-Phase 2 – Extended Features:
-Real-time messaging
+RMSLE penalises large errors, especially underestimating high prices.
 
 
-Interview scheduling
 
+● Final Submission Checklist
+Ensure your final submission includes:
+ ▪ A well-documented Google Colab notebook (.ipynb)
+ ▪ A correctly formatted prediction file
+ ▪ A short README or summary describing your approach
+ ▪ All files uploaded to GitHub
+ ▪ Share your GitHub repo link when requested
 
-Payment Integration for premium job listings
 
-
-Ratings and reviews
-
-
-Admin panel for platform oversight
-
-
-Mobile responsiveness and multi-language support
-
-
-
-4. Tech Stack
-Frontend:
-React.js with Redux and React Router
-
-
-Axios for API communication
-
-
-Tailwind CSS or custom utility classes for responsiveness
-
-
-Backend:
-Node.js with Express.js
-
-
-MongoDB with Mongoose for data modeling
-
-
-Redis (optional) for Pub/Sub and caching
-
-
-AWS S3 for file uploads
-
-
-JWT for secure authentication
-
-
-DevOps & Tools:
-Git & GitHub for version control
-
-
-Docker for local development
-
-
-Render or Railway for deployment
-
-
-Postman for API testing
-
-
-ESLint + Prettier for code consistency
-
-
-
-5. Database Design (MongoDB Collections)
-Users: Common auth fields, role (developer or company)
-
-
-Developers: Profile info, skills, resume URL, applied jobs
-
-
-Companies: Company details, posted jobs
-
-
-Jobs: Job details, tags, location, status, applicants
-
-
-Messages: Chat content, sender and receiver
-
-
-Notifications: Type, user, reference IDs, timestamps
-
-
-Reviews: Company ↔ Developer ratings
-
-
-
-6. Authentication and Security
-JWT tokens for protected routes
-
-
-Bcrypt for password hashing
-
-
-Role-based access controls
-
-
-Input validation and sanitization
-
-
-File upload restrictions (size/type checks)
-
-
-CORS, rate limiting, and error handling
-
-
-
-7. Real-Time Features
-Use Socket.IO or Redis Pub/Sub to push:
-
-
-New application alerts
-
-
-Interview scheduling updates
-
-
-Chat messages
-
-
-Job posting status updates
-
-
-
-8. Resume and Document Uploads
-Use AWS S3 for cloud storage
-
-
-Use signed URLs to securely upload documents
-
-
-Store URLs in developer profiles for retrieval and preview
-
-
-
-9. Testing and Validation
-Manual flow testing for all user journeys
-
-
-API validation using Postman
-
-
-Basic unit tests for critical backend logic
-
-
-Test edge cases (e.g., empty fields, invalid uploads, expired tokens)
-
-
-
-10. Deployment Strategy
-Frontend on Vercel with CI from GitHub
-
-
-Backend on Render or Railway
-
-
-MongoDB Atlas as the managed database
-
-
-AWS S3 for persistent file storage
-
-
-.env configuration for all secrets and keys
-
-
-
-11. Timeline (Solo Developer)
-Week
-Task
-1
-Auth system, MongoDB models, base UI setup
-2
-Developer dashboard, resume upload, job application   
-3
-Company dashboard, job posting/filtering
-4
-Real-time notifications, application tracker
-5
-Messaging system, interview scheduler
-6
-Final testing, optimization, deployment
-
-
-12. Why I’m Capable of Delivering
-Hands-on experience with full-stack MERN applications
-
-
-Familiarity with JWT, MongoDB queries, and scalable backend patterns
-
-
-Past use of Redis Pub/Sub for real-time features
-
-
-Competent in writing maintainable, testable, production-quality code
-
-
-Focused on backend-heavy, logic-driven development
-
-
-Strong debugging, integration, and problem-solving skills
-
-
-Committed to shipping functional iterations with continuous improvement
 
