@@ -1,0 +1,7 @@
+1. Cleaned Train.csv, remove duplicates, droped column with 75%+ of null values, changed sale date to dateandtime dtype to extract sale year, given remaining
+null values appropriate values, encoded categorical and object dtype, drop some more columns which are irrelavent to price prediction
+2. did same with valid.csv.
+3. used train_test_split.
+4. compared LinearRegression, RandomForest, GradientBoosting out of which Random Forest had the best outcome.
+5. used trained model to predict on test.csv.
+6. generated submission.csv as final answer.
